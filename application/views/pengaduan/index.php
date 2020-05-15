@@ -19,7 +19,7 @@
 				<tbody>
 					<?php $no = 1; foreach($pengaduan as $list) { ?>
 					<tr>
-						<td><?= $no ?></td>
+						<td><?= $no++ ?></td>
 						<td><?= $list['tgl'] ?></td>
 						<td><?= $list['isi_laporan'] ?></td>
 						<td><img src="./assets/gambar/<?= $list['foto'] ?>" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""></td>
