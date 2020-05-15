@@ -24,15 +24,10 @@
 						<td><?= $list['isi_laporan'] ?></td>
 						<td><img src="./assets/gambar/<?= $list['foto'] ?>" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""></td>
 						<td class="label label-primary"><?= $list['status'] ?></td>
-<<<<<<< HEAD
-						<td>
-							<a href="<?= base_url('pengaduan/detail/') . $list['id'] ?>" class="btn btn-primary">Detail</a>
-=======
 						<td class="">
 							<a href="<?= base_url('pengaduan/detail/') . $list['id'] ?>" class="btn btn-primary">Detail</a>
 							<a href="<?= base_url('pengaduan/edit/') . $list['id'] ?>" class="btn btn-warning">Edit</a>
 							<a href="<?= base_url('pengaduan/hapus/') . $list['id'] ?>" class="btn btn-danger">Hapus</a>
->>>>>>> initial commit
 						</td>
 					</tr>
 					<?php } ?>

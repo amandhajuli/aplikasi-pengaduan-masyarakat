@@ -72,14 +72,9 @@ class Pengaduan extends MY_Controller {
             $this->load->view('template/view', $data, FALSE);;
         }
     }
-<<<<<<< HEAD
-     public function detail($id)
-     {
-=======
 
     public function detail($id)
     {
->>>>>>> initial commit
         $where = [
             'id'    => $id,
             'nik'   => $this->session->userdata('user')['session_nik']
@@ -97,9 +92,6 @@ class Pengaduan extends MY_Controller {
             "tanggapan"         => $tanggapan
         ];
         $this->load->view('template/view', $data, FALSE);
-<<<<<<< HEAD
-     }
-=======
     }
 
     public function edit($id)
@@ -190,5 +182,4 @@ class Pengaduan extends MY_Controller {
             redirect('pengaduan','refresh');
         }
     }
->>>>>>> initial commit
 }
