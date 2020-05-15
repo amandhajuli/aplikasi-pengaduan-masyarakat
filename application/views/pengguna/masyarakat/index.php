@@ -18,9 +18,9 @@
                         <td><?= $pp['nama'] ?></td>
                         <td><?= $pp['username'] ?></td>
                         <td><?= $pp['telp'] ?></td>
-                        <td>
+                        <!-- <td>
                             <a href="<?= base_url('admin/pengguna/masyarakat/hapus/')?><?= $pp['id'] ?>" class="btn btn-danger"><i class="fas fa-trash"></i> Hapus </a>
-                        </td>
+                        </td> -->
                     </tr>
                     <?php } ?>
                 </tbody>
