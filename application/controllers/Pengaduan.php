@@ -72,8 +72,14 @@ class Pengaduan extends MY_Controller {
             $this->load->view('template/view', $data, FALSE);;
         }
     }
+<<<<<<< HEAD
      public function detail($id)
      {
+=======
+
+    public function detail($id)
+    {
+>>>>>>> initial commit
         $where = [
             'id'    => $id,
             'nik'   => $this->session->userdata('user')['session_nik']
@@ -91,5 +97,98 @@ class Pengaduan extends MY_Controller {
             "tanggapan"         => $tanggapan
         ];
         $this->load->view('template/view', $data, FALSE);
+<<<<<<< HEAD
      }
+=======
+    }
+
+    public function edit($id)
+    {
+        $where = [ "id" => $id ];
+        $this->form_validation->set_rules('isi', 'Isi Laporan', 'required', ['required' => '%s harus diisi']);
+        
+        if ($this->form_validation->run() == TRUE) {
+            if(isset($_FILES['foto']['size']) > 0) {
+                $config['upload_path'] = './assets/gambar';
+                $config['allowed_types'] = 'jpeg|jpg|png';
+                $config['max_size']  = '100';
+                
+                $this->load->library('upload', $config);
+                
+                if ( ! $this->upload->do_upload('foto')){
+                    $error = $this->upload->display_errors();
+                    echo $error;
+                }
+                else{
+                    $data = [
+                        'tgl'           => date('Y-m-d'),
+                        'nik'           => $this->session->userdata('user')['session_nik'],
+                        'isi_laporan'   => htmlspecialchars($this->input->post('isi')),
+                        'foto'          => $this->upload->data()["file_name"],
+                        'status'        => "proses"
+                    ];
+                    $ubah = $this->M_all->ubah('tb_pengaduan', $data, $where);
+                    if($ubah){
+                        echo "<script>";
+                        echo "alert('Pengaduan berhasil diubah')";
+                        echo "</script>";
+                        redirect(base_url('pengaduan'),'refresh');
+                    }else{
+                        echo "<script>";
+                        echo "alert('Pengaduan gagal diubah')";
+                        echo "</script>";
+                        redirect(base_url('pengaduan/ubah'),'refresh');
+                    }
+                }
+            }else{
+                $data = [
+                    'tgl'           => date('Y-m-d'),
+                    'nik'           => $this->session->userdata('user')['session_nik'],
+                    'isi_laporan'   => htmlspecialchars($this->input->post('isi')),
+                    'status'        => "proses"
+                ];
+                $ubah = $this->M_all->ubah('tb_pengaduan', $data, $where);
+                if($ubah){
+                    echo "<script>";
+                    echo "alert('Pengaduan berhasil diubah')";
+                    echo "</script>";
+                    redirect(base_url('pengaduan'),'refresh');
+                }else{
+                    echo "<script>";
+                    echo "alert('Pengaduan gagal diubah')";
+                    echo "</script>";
+                    redirect(base_url('pengaduan/ubah'),'refresh');
+                }
+            }
+        }else{
+            $pengaduan = $this->M_all->tampilSatu('tb_pengaduan', $where)->row();
+            $data = [
+                        "pengaduan"         => $pengaduan,
+                        "title"             => 'Ubah pengaduan',
+                        "breadcumb"         => 'Pengaduan / ubah',
+                        "content"           => 'pengaduan/ubah'
+            ];
+            $this->load->view('template/view', $data, FALSE);;
+        }
+    }
+
+    public function hapus($id)
+    {
+        $where = [
+            'id'    => $id
+        ];
+        $hapus = $this->M_all->hapus('tb_pengaduan', $where);
+        if($hapus){
+            echo "<script>";
+            echo "alert('Data berhasil dihapus')";
+            echo "</script>";
+            redirect('pengaduan','refresh');
+        }else{
+            echo "<script>";
+            echo "alert('Data gagal dihapus')";
+            echo "</script>";
+            redirect('pengaduan','refresh');
+        }
+    }
+>>>>>>> initial commit
 }
