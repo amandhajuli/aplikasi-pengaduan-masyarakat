@@ -4,16 +4,11 @@
 	<div class="container-fluid">
 		<div class="d-flex align-items-center justify-content-between small">
 			<div class="text-muted">
-				Copyright &copy; Kelompok Petakan 2020 &nbsp; Created by
+				Copyright &copy; UKK RPL 2020 &nbsp; Created by
 				<a href="https://andi.dherpl.site">Andi</a>
-				<a href="">Gita GG</a>
-				<a href="">Yunita N</a>
-				<a href="">Yana H</a>
 			</div>
 			<div>
-				<a href="#">Privacy Policy</a>
-				&middot;
-				<a href="#">Terms &amp; Conditions</a>
+				Source Code <a href="https://github.com/andidev30/aplikasi-pengaduan-masyarakat">github andidev30</a>
 			</div>
 		</div>
 	</div>

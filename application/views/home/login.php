@@ -66,11 +66,13 @@
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid">
 					<div class="d-flex align-items-center justify-content-between small">
-						<div class="text-muted">Copyright &copy; Your Website 2019</div>
+						<div class="text-muted">
+							Copyright &copy; UKK RPL 2020 &nbsp; Created by
+							<a href="https://andi.dherpl.site">Andi</a>
+						</div>
 						<div>
-							<a href="#">Privacy Policy</a>
-							&middot;
-							<a href="#">Terms &amp; Conditions</a>
+							Source Code <a href="https://github.com/andidev30/aplikasi-pengaduan-masyarakat">github
+								andidev30</a>
 						</div>
 					</div>
 				</div>
