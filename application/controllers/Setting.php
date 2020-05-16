@@ -33,7 +33,7 @@ class Setting extends MY_Controller {
                 $ubah = $this->M_all->ubah('tb_masyarakat', $data, $where);
                 if($ubah){
                     $this->session->set_flashdata('pesan', 'password berhasil diubah');
-                    redirect(base_url('home'),'refresh');
+                    redirect(base_url('auth/logout'),'refresh');
                 }else{
                     $this->session->set_flashdata('pesan', 'password gagal diubah');
                     redirect(base_url('setting/change-password'),'refresh');

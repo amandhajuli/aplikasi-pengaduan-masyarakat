@@ -96,7 +96,7 @@ class Pengaduan extends MY_Controller {
         $this->form_validation->set_rules('isi', 'Isi Laporan', 'required', ['required' => '%s harus diisi']);
         
         if ($this->form_validation->run() == TRUE) {
-            if(isset($_FILES['foto']['size']) > 0) {
+            if($_FILES['foto']['size'] > 0) {
                 $config['upload_path'] = './assets/gambar';
                 $config['allowed_types'] = 'jpeg|jpg|png';
                 $config['max_size']  = '100';

@@ -19,6 +19,7 @@
 						<th>Nama</th>
 						<th>Username</th>
 						<th>Level</th>
+						<th>No telepon</th>
 						<th>Aksi</th>
 					</tr>
 				</thead>
@@ -27,6 +28,7 @@
                     <tr>
                         <td><?= $pp['nama_petugas'] ?></td>
                         <td><?= $pp['username'] ?></td>
+                        <td><?= $pp['telp'] ?></td>
                         <td><?= $pp['level'] ?></td>
                         <td>
                             <a href="<?= base_url('admin/pengguna/petugas/edit/')?><?= $pp['id'] ?>" class="btn btn-warning"><i class="fas fa-edit"></i> Edit </a>

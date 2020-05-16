@@ -17,7 +17,6 @@
 						<th>Nama</th>
 						<th>Username</th>
 						<th>No Telepon</th>
-						<th>Aksi</th>
 					</tr>
 				</thead>
 				<tbody>
