@@ -31,20 +31,24 @@
 						<td><?= $pp['nik'] ?></td>
 						<td><?= $pp['nama'] ?></td>
 						<td><?= $pp['isi_laporan'] ?></td>
-						<td><img src="<?= base_url() ?>/assets/gambar/<?= $pp['foto'] ?>"
-								class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
-								alt=""></td>
+						<td>
+							<a href="<?= base_url('assets/gambar/') . $pp['foto'] ?>" data-toggle="lightbox"
+								data-gallery="gallery" class="col-md-4">
+								<img class="img-fluid" src="<?= base_url('assets/gambar/') . $pp['foto'] ?>"
+									alt="Card image cap">
+							</a>
+						</td>
 						<td class="text-capitalize"><?= $pp['status'] ?></td>
 						<td>
 							<?php if($pp['status'] == 'proses') { ?>
-							<a href="<?= base_url('admin/kelola/balas/')?><?= $pp['id'] ?>" class="btn btn-warning btn-sm"><i
-									class="fas fa-edit"></i> Balas </a>
+							<a href="<?= base_url('admin/kelola/balas/')?><?= $pp['id'] ?>"
+								class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Balas </a>
 							<?php } else if($pp['status'] == 'ditanggapi') { ?>
-							<a href="<?= base_url('admin/kelola/selesai/')?><?= $pp['id'] ?>" class="btn btn-success btn-sm"><i
-									class="fas fa-edit"></i> Selesai </a>
+							<a href="<?= base_url('admin/kelola/selesai/')?><?= $pp['id'] ?>"
+								class="btn btn-success btn-sm"><i class="fas fa-edit"></i> Selesai </a>
 							<?php } ?>
-							<a href="<?= base_url('admin/kelola/hapus/')?><?= $pp['id'] ?>" class="btn btn-danger btn-sm"><i
-									class="fas fa-trash"></i> Hapus </a>
+							<a href="<?= base_url('admin/kelola/hapus/')?><?= $pp['id'] ?>"
+								class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus </a>
 						</td>
 					</tr>
 					<?php } ?>

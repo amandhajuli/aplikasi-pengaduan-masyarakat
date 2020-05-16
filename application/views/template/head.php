@@ -16,5 +16,7 @@
         <link rel="stylesheet" href="<?= base_url('assets/css/') ?>dataTables.bootstrap4.min.css">
         <link rel="stylesheet" href="<?= base_url('assets/css/') ?>extra/buttons.dataTables.min.css">
         <link rel="stylesheet" href="<?= base_url('assets/css/') ?>extra/jquery.dataTables.min.css">
+        <!-- light box -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.css" rel="stylesheet" />
     </head>
     <body class="sb-nav-fixed">

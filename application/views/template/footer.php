@@ -4,7 +4,7 @@
 	<div class="container-fluid">
 		<div class="d-flex align-items-center justify-content-between small">
 			<div class="text-muted">
-				Copyright &copy; Kelompok Petakan 2020 &nbsp; Created by 
+				Copyright &copy; Kelompok Petakan 2020 &nbsp; Created by
 				<a href="https://andi.dherpl.site">Andi</a>
 				<a href="">Gita GG</a>
 				<a href="">Yunita N</a>
@@ -41,6 +41,15 @@
 <script src="<?= base_url('assets/js/') ?>extra/pdfmake.min.js" crossorigin="anonymous"></script>
 <script src="<?= base_url('assets/js/') ?>extra/vfs_fonts.js" crossorigin="anonymous"></script>
 <script src="<?= base_url('assets/js/') ?>extra/buttons.html5.min.js" crossorigin="anonymous"></script>
+<!-- light box -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.js"></script>
+<script>
+	$(document).on("click", '[data-toggle="lightbox"]', function (event) {
+		event.preventDefault();
+		$(this).ekkoLightbox();
+	});
+</script>
+
 <!-- script -->
 <script type="text/javascript" class="init">
 	$(document).ready(function () {

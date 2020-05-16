@@ -1,6 +1,9 @@
 <div class="container">
 	<div class="card">
-		<img class="img-fluid" src="<?= base_url('assets/gambar/') . $pengaduan->foto ?>" alt="Card image cap">
+		<a href="<?= base_url('assets/gambar/') . $pengaduan->foto ?>" data-toggle="lightbox" data-gallery="gallery"
+			class="col-md-4">
+			<img class="img-fluid" src="<?= base_url('assets/gambar/') . $pengaduan->foto ?>" alt="Card image cap">
+		</a>
 		<div class="card-body">
 			<h5 class="card-title text-capitalize">Identitas : <?= $pengaduan->nama ?>&nbsp;(<?= $pengaduan->nik ?>)
 			</h5>
@@ -17,7 +20,7 @@
 						rows="4"><?= set_value('balasan') ?></textarea>
 				</div>
 				<div class="form-group row justify-content-center">
-					<a href="<?= base_url('admin/kelola') ?>" class="btn btn-warning">Kembali</a> &nbsp; 
+					<a href="<?= base_url('admin/kelola') ?>" class="btn btn-warning">Kembali</a> &nbsp;
 					<button type="submit" class="btn btn-primary">Simpan</button>
 				</div>
 			</form>
