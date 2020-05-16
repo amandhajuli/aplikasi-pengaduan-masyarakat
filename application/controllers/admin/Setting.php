@@ -32,14 +32,10 @@ class Setting extends MY_Controller {
                 ];
                 $ubah = $this->M_all->ubah('tb_petugas', $data, $where);
                 if($ubah){
-                    echo "<script>";
-                    echo "alert('Password berhasil diubah')";
-                    echo "</script>";
+                    $this->session->set_flashdata('pesan', 'password berhasil diubah');
                     redirect(base_url('admin/dashboard'),'refresh');
                 }else{
-                    echo "<script>";
-                    echo "alert('Password gagal diubah')";
-                    echo "</script>";
+                    $this->session->set_flashdata('pesan', 'password gagal diubah');
                     redirect(base_url('admin/ssetting/change-password'),'refresh');
                 }
             }else{

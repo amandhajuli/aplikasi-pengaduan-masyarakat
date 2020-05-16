@@ -1,3 +1,12 @@
+<!-- php notifikasi -->
+<?php
+    if($this->session->flashdata('pesan'))
+    {
+        echo '<div class="alert alert-success">';
+        echo $this->session->flashdata('pesan');
+        echo '</div>';
+    }
+?>
 <h1 class="mt-4"><?= $title ?></h1>
 <ol class="breadcrumb mb-4">
 	<li class="breadcrumb-item active"><?= $breadcumb ?></li>

@@ -1,3 +1,12 @@
+<!-- php notifikasi -->
+<?php
+    if($this->session->flashdata('pesan'))
+    {
+        echo '<div class="alert alert-success">';
+        echo $this->session->flashdata('pesan');
+        echo '</div>';
+    }
+?>
 <div class="card pt-4 pl-5 pr-5">
 	<form action="" method="post" enctype="multipart/form-data">
 		<div class="form-group row">

@@ -52,14 +52,10 @@ class Pengaduan extends MY_Controller {
                 ];
                 $tambah = $this->M_all->simpan('tb_pengaduan', $data);
                 if($tambah){
-                    echo "<script>";
-                    echo "alert('Pengaduan berhasil ditambah')";
-                    echo "</script>";
+                    $this->session->set_flashdata('pesan', 'data berhasil ditambah');
                     redirect(base_url('pengaduan'),'refresh');
                 }else{
-                    echo "<script>";
-                    echo "alert('Pengaduan gagal ditambah')";
-                    echo "</script>";
+                    $this->session->set_flashdata('pesan', 'data gagal ditambah');
                     redirect(base_url('pengaduan/tambah'),'refresh');
                 }
             }
@@ -121,14 +117,10 @@ class Pengaduan extends MY_Controller {
                     ];
                     $ubah = $this->M_all->ubah('tb_pengaduan', $data, $where);
                     if($ubah){
-                        echo "<script>";
-                        echo "alert('Pengaduan berhasil diubah')";
-                        echo "</script>";
+                        $this->session->set_flashdata('pesan', 'data berhasil diubah');
                         redirect(base_url('pengaduan'),'refresh');
                     }else{
-                        echo "<script>";
-                        echo "alert('Pengaduan gagal diubah')";
-                        echo "</script>";
+                        $this->session->set_flashdata('pesan', 'data gagal diubah');
                         redirect(base_url('pengaduan/ubah'),'refresh');
                     }
                 }
@@ -141,14 +133,10 @@ class Pengaduan extends MY_Controller {
                 ];
                 $ubah = $this->M_all->ubah('tb_pengaduan', $data, $where);
                 if($ubah){
-                    echo "<script>";
-                    echo "alert('Pengaduan berhasil diubah')";
-                    echo "</script>";
+                    $this->session->set_flashdata('pesan', 'data berhasil diubah');
                     redirect(base_url('pengaduan'),'refresh');
                 }else{
-                    echo "<script>";
-                    echo "alert('Pengaduan gagal diubah')";
-                    echo "</script>";
+                    $this->session->set_flashdata('pesan', 'data gagal diubah');
                     redirect(base_url('pengaduan/ubah'),'refresh');
                 }
             }
@@ -171,14 +159,10 @@ class Pengaduan extends MY_Controller {
         ];
         $hapus = $this->M_all->hapus('tb_pengaduan', $where);
         if($hapus){
-            echo "<script>";
-            echo "alert('Data berhasil dihapus')";
-            echo "</script>";
+            $this->session->set_flashdata('pesan', 'data berhasil dihapus');
             redirect('pengaduan','refresh');
         }else{
-            echo "<script>";
-            echo "alert('Data gagal dihapus')";
-            echo "</script>";
+            $this->session->set_flashdata('pesan', 'data gagal dihapus');
             redirect('pengaduan','refresh');
         }
     }

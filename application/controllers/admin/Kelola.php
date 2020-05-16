@@ -28,14 +28,10 @@ class Kelola extends MY_Controller {
         ];
         $hapus = $this->M_all->hapus('tb_pengaduan', $where);
         if($hapus){
-            echo "<script>";
-            echo "alert('Data berhasil dihapus')";
-            echo "</script>";
+            $this->session->set_flashdata('pesan', 'data berhasil dihapus');
             redirect('admin/kelola','refresh');
         }else{
-            echo "<script>";
-            echo "alert('Data gagal dihapus')";
-            echo "</script>";
+            $this->session->set_flashdata('pesan', 'data gagal dihapus');
             redirect('admin/kelola','refresh');
         }
     }
@@ -60,14 +56,10 @@ class Kelola extends MY_Controller {
                     'status'    => 'ditanggapi'
                 ];
                 $ubah = $this->M_all->ubah('tb_pengaduan', $data, $where);
-                echo "<script>";
-                echo "alert('Berhasil Membuat Balasan')";
-                echo "</script>";
+                $this->session->set_flashdata('pesan', 'data berhasil diubah');
                 redirect('admin/kelola','refresh');
             }else{
-                echo "<script>";
-                echo "alert('Gagal Membuat Balasan')";
-                echo "</script>";
+                $this->session->set_flashdata('pesan', 'data gagal diubah');
                 redirect('admin/kelola','refresh');
             }
         } else {
@@ -94,14 +86,10 @@ class Kelola extends MY_Controller {
         ];
         $ubah = $this->M_all->ubah('tb_pengaduan ', $data, $where);
         if($ubah){
-            echo "<script>";
-            echo "alert('Pengaduan Berhasil diselesaikan')";
-            echo "</script>";
+            $this->session->set_flashdata('pesan', 'data berhasil diselsaikan');
             redirect('admin/kelola','refresh');
         }else{
-            echo "<script>";
-            echo "alert('Pengaduan Gagal diselesaika')";
-            echo "</script>";
+            $this->session->set_flashdata('pesan', 'data gagal diselesaikan');
             redirect('admin/kelola','refresh');
         }
     }

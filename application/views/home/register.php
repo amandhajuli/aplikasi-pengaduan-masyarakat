@@ -14,7 +14,15 @@
 </head>
 
 <body class="bg-primary">
-
+<!-- php notifikasi -->
+<?php
+    if($this->session->flashdata('pesan'))
+    {
+        echo '<div class="alert alert-success">';
+        echo $this->session->flashdata('pesan');
+        echo '</div>';
+    }
+?>
     <?php echo validation_errors('<div class="alert alert-warning alert-dismissible fade show"><strong>Error! </strong>', '<button type="button" class="close" data-dismiss="alert">&times;</button></div>') ?>
 		<div id="layoutAuthentication_content">
 			<main>

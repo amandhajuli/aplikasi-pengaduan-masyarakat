@@ -1,3 +1,12 @@
+<!-- php notifikasi -->
+<?php
+    if($this->session->flashdata('pesan'))
+    {
+        echo '<div class="alert alert-success">';
+        echo $this->session->flashdata('pesan');
+        echo '</div>';
+    }
+?>
 <div class="card mb-4">
 	<div class="card-header">
         <a href="<?= base_url('admin/pengguna/petugas/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</a>

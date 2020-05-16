@@ -36,14 +36,10 @@ class Auth extends CI_Controller {
             ];
             $tambah = $this->M_all->simpan('tb_masyarakat', $data);
             if($tambah){
-                echo "<script>";
-                echo "alert('Berhasil Mendaftara .... Silahkan Login !')";
-                echo "</script>";
+                $this->session->set_flashdata('pesan', 'data telah ditambah');
                 redirect(base_url('auth/login'),'refresh');
             }else{
-                echo "<script>";
-                echo "alert('Gagal Mendaftar Silahkan Ulangi')";
-                echo "</script>";
+                $this->session->set_flashdata('pesan', 'ada kesalahan sialhkan mendaftar kembali');
                 redirect(base_url('auth/register'),'refresh');
             }
         }else{
@@ -84,7 +80,7 @@ class Auth extends CI_Controller {
                 $this->session->set_userdata("user", $array );
                 $this->session->unset_userdata('admin');
                 
-                redirect(base_url(''),'refresh');
+                redirect(base_url('home'),'refresh');
                 
             }else{
                 $this->session->set_flashdata('pesan-login', 'Password salah');

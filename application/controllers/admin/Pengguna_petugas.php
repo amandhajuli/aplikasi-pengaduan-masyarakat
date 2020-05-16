@@ -50,14 +50,10 @@ class Pengguna_petugas extends MY_Controller {
             ];
             $tambah = $this->M_all->simpan('tb_petugas', $data);
             if($tambah){
-                echo "<script>";
-                echo "alert('Data berhasil ditambah')";
-                echo "</script>";
+                $this->session->set_flashdata('pesan', 'data berhasil tambah');
                 redirect(base_url('admin/pengguna/petugas'),'refresh');
             }else{
-                echo "<script>";
-                echo "alert('Data gagall ditambah')";
-                echo "</script>";
+                $this->session->set_flashdata('pesan', 'data gagal dtambah');
                 redirect(base_url('admin/pengguna/petugas/tambah'),'refresh');
             }
             
@@ -78,14 +74,10 @@ class Pengguna_petugas extends MY_Controller {
         ];
         $hapus = $this->M_all->hapus('tb_petugas', $where);
         if($hapus){
-            echo "<script>";
-            echo "alert('Data berhasil dihapus')";
-            echo "</script>";
+            $this->session->set_flashdata('pesan', 'data berhasil dihapus');
             redirect('admin/pengguna/petugas','refresh');
         }else{
-            echo "<script>";
-            echo "alert('Data gagal dihapus')";
-            echo "</script>";
+            $this->session->set_flashdata('pesan', 'data gagal dihapus');
             redirect('admin/pengguna/petugas','refresh');
         }
     }
@@ -110,14 +102,10 @@ class Pengguna_petugas extends MY_Controller {
             $ubah = $this->M_all->ubah('tb_petugas', $data, $where);
             // var_dump($ubah);die;
             if($ubah){
-                echo "<script>";
-                echo "alert('Data berhasil diubah')";
-                echo "</script>";
+                $this->session->set_flashdata('pesan', 'data berhasil diubah');
                 redirect(base_url('admin/pengguna/petugas'),'refresh');
             }else{
-                echo "<script>";
-                echo "alert('Data gagall diubah')";
-                echo "</script>";
+                $this->session->set_flashdata('pesan', 'data gagal diubah');
                 redirect(base_url('admin/pengguna/petugas/ubah'),'refresh');
             }
             
